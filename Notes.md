@@ -182,15 +182,86 @@ Vejamos:
 
 ```CSS
 div {
-  margin: 20px; //empurra para os lados, topo e baixo
+  margin: 20px;  /* empurra para os lados, topo e baixo */
 }
 
 span {
-  margin: 20px; //empurra para as laterais, pois não respeita o margin de cima e de baixo
+  margin: 20px; /* empurra para as laterais, pois não respeita o margin de cima e de baixo */
 }
 ```
 
 ### Margin
+
+Margin são os espaço (as margens) entre os elementos.
+
+Podemos dividir o margin em 4 propriedades:
+
+```CSS
+/* margin-top | margin-right | margin-bottom | margin-left */
+```
+
+Já os valores aceitos são:<br> `<length>` | `<percentage>` | auto
+
+Geralmente usamos uma forma abreviada (shorthand) para escrever o margin. Esse formato segue o sentido horário iniciando pelo top, seguindo para right, bottom e left, como se seguisse a lógica de um relógio analógico.
+
+```CSS
+margin: 12px 16px 10px 4px; /* TOP = 12px | RIGHT = 16px | BOTTOM = 10px | LEFT = 4px */
+margin: 12px 16px 0; /* TOP = 12px | RIGHT = 16px | BOTTOM = 0px | LEFT = 16px */
+margin: 8px 16px; /* TOP = 8px | RIGHT = 16px | BOTTOM = 8px | LEFT = 16px */
+margin: 8px; /* TOP = 8px | RIGHT = 8px | BOTTOM = 8px | LEFT = 8px */
+```
+
+O `margin` é aplicado em elementos com `display block`.
+
+**Atenção**: Cuidado com o `margin collapsing`, que é quando o `top` se junta ao `bottom`.
+
+Por exemplo, a div está colocando um `margin-bottom` de 8px no exemplo abaixo:
+
+```HTML
+<div>margin</div>
+<section>Elemento abaixo</section>
+```
+
+```CSS
+* {
+  margin: 0;
+}
+
+div, section {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+
+  margin: 0 16px;
+}
+
+div {
+  margin-bottom: 8px;
+}
+```
+
+Se eu colocar na `section` um `margin-top` também de 8px, nada irá acontecer aos nosso olhos, pois, por baixo dos panos, essas margens vão se juntar para dar o mesmo resultado de 8px; ele não soma.
+
+Esse `margin collapsing`, entretanto, não aconteceria se uma caixa estivesse ao lado da outra.
+
+Resetando `div` e `section` para `display: inline` e adicionando margens laterais de 2px, conseguimos ver que acontece a soma dos espaçamentos entre as caixas `margin` e `elemento abaixo`, deixando esse espaço com 4px:
+
+```CSS
+* {
+  margin: 0;
+}
+
+div, section {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+
+  display: inline;
+  margin: 0 2px;
+}
+```
+
+Quando um elemento está ao lado do outro, não há o `margin collapsing` porque é feita uma soma das margens. Mas quando os elementos estão um abaixo do outro, existe e apenas um valor é considerado e, assim, não existe a soma de espaçamento.
 
 ### Padding
 
