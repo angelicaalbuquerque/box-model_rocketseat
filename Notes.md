@@ -215,7 +215,7 @@ O `margin` é aplicado em elementos com `display block`.
 
 **Atenção**: Cuidado com o `margin collapsing`, que é quando o `top` se junta ao `bottom`.
 
-Por exemplo, a div está colocando um `margin-bottom` de 8px no exemplo abaixo:
+A div está colocando um `margin-bottom` de 8px no exemplo abaixo:
 
 ```HTML
 <div>margin</div>
@@ -262,6 +262,23 @@ div, section {
 ```
 
 Quando um elemento está ao lado do outro, não há o `margin collapsing` porque é feita uma soma das margens. Mas quando os elementos estão um abaixo do outro, existe e apenas um valor é considerado e, assim, não existe a soma de espaçamento.
+
+Lembrando que além de pixels, podemos utilizar `%` e `auto`. Entretanto, o `auto` apenas é aplicado nas laterais, ou seja, não faz calculos automáticos para cima e para baixo (para que ele faça, é necessário uma outra propriedade).
+
+```CSS
+* {
+  margin: 0;
+}
+
+div, section {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+
+  display: block;
+  margin: 0 auto;
+}
+```
 
 ### Padding
 
