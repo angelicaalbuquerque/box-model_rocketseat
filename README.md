@@ -62,7 +62,7 @@ Anotações das aulas estão disponíveis <a href="https://github.com/angelicaal
   <a href="https://br.pinterest.com/FrontAngie/" target="blank" style="text-decoration: none;">
     <img align="center" src="https://raw.githubusercontent.com/angelicaalbuquerque/badges-and-icons/f7a53a1a79600d93eed5e21e8f32ff0256471e00/icons/pinterest.svg" alt="Pinterest" height="30" width="30" />
   </a> &nbsp
-  <a href="https://dev.to/frontangie" target="blank" style="text-decoration: none;">
+  <a href="https://www.instagram.com/frontangie/" target="blank" style="text-decoration: none;">
     <img align="center" src="https://raw.githubusercontent.com/angelicaalbuquerque/badges-and-icons/f7a53a1a79600d93eed5e21e8f32ff0256471e00/icons/instagram.svg" alt="Instagram" height="30" width="30" />
   </a> &nbsp &nbsp
 </p>
