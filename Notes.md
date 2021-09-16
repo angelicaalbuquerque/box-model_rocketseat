@@ -299,11 +299,69 @@ padding: 8px 16px; /* TOP = 8px | RIGHT = 16px | BOTTOM = 8px | LEFT = 16px */
 padding: 8px; /* TOP = 8px | RIGHT = 8px | BOTTOM = 8px | LEFT = 8px */
 ```
 
-O `padding` pode ter valores (values) de comprimento (`<length>`, que são px, em, rem) e porcentagem (%). 
+O `padding` pode ter valores (values) de comprimento (`<length>`, que são px, em, rem) e porcentagem (%).
 
 Valor automático não tem. Com isso, o `padding` poderá causar diferença na largura de um elemento.
 
 Perceba que quando mexemos no `padding`, as caixas não são empurradas. É ajustado apenas o espaçamento interno.
 
+### Border e outline
 
-### Border-outline
+São as bordas da caixa.
+
+_[Documentação do MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border)_
+
+- value (estilo, largura, coloração):
+  `<border-style>` | `<border-width>` | `<border-color>`
+
+  - aplicações para style: solid | dotted | dashed | double | groove | ridge | inset | outset
+  - propriedade para width: `<length>`
+  - propriedade para color: `<color>`
+
+  Exemplos:
+
+  ```CSS
+  div {
+  	/* shorthand */
+  	border-top: solid 2px; /* top | right | bottom | left */
+
+  	/* style */
+  	border: solid;
+
+  	/* width <length> | style */
+  	border: 2px dotted;
+
+  	/* style | color */
+  	border: outset #f33;
+
+  	/* width | style | color */
+  	border: medium dashed green;
+  }
+  ```
+
+Atenção: o `border` soma com a caixa. Então, se eu aplicar na div width e height com 100px, por exemplo, e na border eu aplicar 1px, o tamanho e altura valerão 102px.
+
+```CSS
+* {
+  margin: 0;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  margin: 20% auto;
+
+  border: 1px solid red;
+}
+```
+
+Para usar as bordas sendo parte de width, devemos usar a propriedade `box-sizing: border-box`, para que então a caixa passe a ter 100px de altura/largura, sem sofrer interferência da borda.
+
+**E o outline?**
+
+O outline é muito semelhante ao border, mas difere em 4 sentidos:
+
+- Não modifica o tamanho da caixa, pois não é parte do Box Model;
+- Poderá ser diferente de retangular;
+- Não permite ajuste individuais;
+- Mais usado pelo user agent para acessibilidade (como o foco de inputs).
